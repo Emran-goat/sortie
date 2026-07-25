@@ -1,0 +1,19 @@
+C4Component
+title Sortie Component Diagram
+
+Container_Boundary(engine, "Engine (lib)") {
+  Component(build, "build", "Rust", "Runs cargo build --release for target triple")
+  Component(ssh, "ssh", "Rust (libssh2)", "SCP upload + SSH command execution")
+  Component(deploy, "deploy", "Rust", "Orchestrates: build → upload → install → check")
+  Component(systemd, "systemd", "Rust", "Generates .service file and runs systemctl commands")
+  Component(health, "health", "Rust", "HTTP GET with timeout, checks binary health endpoint")
+  Component(rollback, "rollback", "Rust", "Restores previous binary from .bak on failure")
+}
+
+Rel_Left(build, deploy, "Called by")
+Rel_Right(ssh, deploy, "Called by")
+Rel_Right(systemd, deploy, "Called by")
+Rel_Right(health, deploy, "Called by")
+Rel(deply, rollback, "On failure calls")
+
+UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="3")

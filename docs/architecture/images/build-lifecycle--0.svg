@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 350" style="max-width:900px;font-family:system-ui,-apple-system,sans-serif;">
+<rect width="900" height="350" fill="#fff"/>
+<text x="450" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">Build Lifecycle</text>
+
+<rect x="30" y="100" width="110" height="50" rx="6" fill="#DAE8FC" stroke="#4A7DB4" stroke-width="1.5"/>
+<text x="85" y="119" text-anchor="middle" font-size="13" font-weight="bold" fill="#000">Load config</text>
+<text x="85" y="135" text-anchor="middle" font-size="11" fill="#444">sortie.toml</text>
+<rect x="160" y="100" width="110" height="50" rx="6" fill="#DAE8FC" stroke="#4A7DB4" stroke-width="1.5"/>
+<text x="215" y="119" text-anchor="middle" font-size="13" font-weight="bold" fill="#000">Build binary</text>
+<text x="215" y="135" text-anchor="middle" font-size="11" fill="#444">cargo build</text>
+<rect x="290" y="100" width="110" height="50" rx="6" fill="#DAE8FC" stroke="#4A7DB4" stroke-width="1.5"/>
+<text x="345" y="119" text-anchor="middle" font-size="13" font-weight="bold" fill="#000">Upload SCP</text>
+<text x="345" y="135" text-anchor="middle" font-size="11" fill="#444">libssh2</text>
+<rect x="420" y="100" width="110" height="50" rx="6" fill="#DAE8FC" stroke="#4A7DB4" stroke-width="1.5"/>
+<text x="475" y="119" text-anchor="middle" font-size="13" font-weight="bold" fill="#000">Install systemd</text>
+<text x="475" y="135" text-anchor="middle" font-size="11" fill="#444">service file</text>
+<rect x="550" y="100" width="110" height="50" rx="6" fill="#DAE8FC" stroke="#4A7DB4" stroke-width="1.5"/>
+<text x="605" y="119" text-anchor="middle" font-size="13" font-weight="bold" fill="#000">Start service</text>
+<text x="605" y="135" text-anchor="middle" font-size="11" fill="#444">systemctl</text>
+<rect x="680" y="100" width="110" height="50" rx="6" fill="#D5E8D4" stroke="#5F8E5F" stroke-width="1.5"/>
+<text x="735" y="119" text-anchor="middle" font-size="13" font-weight="bold" fill="#000">Health check</text>
+<text x="735" y="135" text-anchor="middle" font-size="11" fill="#444">10s timeout</text>
+<rect x="790" y="210" width="110" height="50" rx="6" fill="#F8CECC" stroke="#A53D3D" stroke-width="1.5"/>
+<text x="845" y="229" text-anchor="middle" font-size="13" font-weight="bold" fill="#000">Rollback</text>
+<text x="845" y="245" text-anchor="middle" font-size="11" fill="#444">restore .bak</text>
+<line x1="140" y1="125" x2="160" y2="125" stroke="#666" stroke-width="1.5" marker-end="none"/>
+<polygon points="160,125 150,130 150,120" fill="#666" stroke="#666" stroke-width="1"/>
+<text x="150" y="119" text-anchor="middle" font-size="10" fill="#555" transform=""></text>
+<line x1="270" y1="125" x2="290" y2="125" stroke="#666" stroke-width="1.5" marker-end="none"/>
+<polygon points="290,125 280,130 280,120" fill="#666" stroke="#666" stroke-width="1"/>
+<text x="280" y="119" text-anchor="middle" font-size="10" fill="#555" transform=""></text>
+<line x1="400" y1="125" x2="420" y2="125" stroke="#666" stroke-width="1.5" marker-end="none"/>
+<polygon points="420,125 410,130 410,120" fill="#666" stroke="#666" stroke-width="1"/>
+<text x="410" y="119" text-anchor="middle" font-size="10" fill="#555" transform=""></text>
+<line x1="530" y1="125" x2="550" y2="125" stroke="#666" stroke-width="1.5" marker-end="none"/>
+<polygon points="550,125 540,130 540,120" fill="#666" stroke="#666" stroke-width="1"/>
+<text x="540" y="119" text-anchor="middle" font-size="10" fill="#555" transform=""></text>
+<line x1="660" y1="125" x2="680" y2="125" stroke="#666" stroke-width="1.5" marker-end="none"/>
+<polygon points="680,125 670,130 670,120" fill="#666" stroke="#666" stroke-width="1"/>
+<text x="670" y="119" text-anchor="middle" font-size="10" fill="#555" transform=""></text>
+<line x1="735" y1="150" x2="735" y2="210" stroke="#666" stroke-width="1.5" marker-end="none"/>
+<polygon points="735,210 730,200 740,200" fill="#666" stroke="#666" stroke-width="1"/>
+<text x="735" y="174" text-anchor="middle" font-size="10" fill="#555" transform="">fail</text>
+<line x1="790" y1="200" x2="790" y2="160" stroke="#666" stroke-width="1.5" marker-end="none"/>
+<polygon points="790,160 795,170 785,170" fill="#666" stroke="#666" stroke-width="1"/>
+<text x="790" y="174" text-anchor="middle" font-size="10" fill="#555" transform="rotate(180 790 180)">pass</text>
+
+</svg>

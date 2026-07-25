@@ -1,0 +1,15 @@
+C4Dynamic
+title Build Lifecycle
+
+Person(dev, "Developer")
+System(cli, "sortie CLI")
+
+Rel(dev, cli, "sortie deploy production")
+Rel(cli, cli, "1. Load config (sortie.toml)")
+Rel(cli, cli, "2. Build binary (cargo build)")
+Rel(cli, cli, "3. Connect via SSH")
+Rel(cli, cli, "4. Upload binary (SCP)")
+Rel(cli, cli, "5. Install systemd service")
+Rel(cli, cli, "6. Start service")
+Rel(cli, cli, "7. Health check (10s timeout)")
+Rel(cli, cli, "8. Record deploy or rollback")

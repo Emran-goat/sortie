@@ -1,0 +1,129 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E84C3D"/>
+      <stop offset="100%" stop-color="#B03A2E"/>
+    </linearGradient>
+    <linearGradient id="wheelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#326CE5"/>
+      <stop offset="100%" stop-color="#1a4fa0"/>
+    </linearGradient>
+    <linearGradient id="hatGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#333"/>
+      <stop offset="100%" stop-color="#111"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7d794"/>
+      <stop offset="100%" stop-color="#c99e3d"/>
+    </linearGradient>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1a2a3a"/>
+      <stop offset="100%" stop-color="#0a0e1a"/>
+    </radialGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.4"/></filter>
+    <filter id="glow"><feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#DE3A2E" flood-opacity="0.3"/></filter>
+  </defs>
+
+  <!-- background circle -->
+  <circle cx="200" cy="200" r="195" fill="url(#bgGrad)" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
+
+  <!-- outer ring -->
+  <circle cx="200" cy="200" r="180" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+
+  <!-- ====== FERRIS ====== -->
+  <g filter="url(#glow)">
+    <!-- body circle -->
+    <circle cx="200" cy="230" r="75" fill="url(#bodyGrad)" filter="url(#shadow)"/>
+
+    <!-- body texture lines -->
+    <g fill="none" stroke="#8a1e14" stroke-width="1.2" opacity="0.2">
+      <path d="M140,210 Q200,235 260,210"/>
+      <path d="M135,225 Q200,255 265,225"/>
+      <path d="M140,240 Q200,270 260,240"/>
+      <path d="M155,255 Q200,282 245,255"/>
+    </g>
+
+    <!-- legs left -->
+    <g fill="none" stroke="#C0392B" stroke-width="3" stroke-linecap="round" opacity="0.6">
+      <path d="M145,270 C120,290 105,310 95,330"/>
+      <path d="M155,280 C135,305 125,330 118,350"/>
+      <path d="M168,288 C152,315 145,340 140,358"/>
+      <path d="M182,293 C172,318 168,342 164,360"/>
+    </g>
+    <!-- legs right -->
+    <g fill="none" stroke="#C0392B" stroke-width="3" stroke-linecap="round" opacity="0.6">
+      <path d="M255,270 C280,290 295,310 305,330"/>
+      <path d="M245,280 C265,305 275,330 282,350"/>
+      <path d="M232,288 C248,315 255,340 260,358"/>
+      <path d="M218,293 C228,318 232,342 236,360"/>
+    </g>
+
+    <!-- left arm + claw -->
+    <path d="M142,190 C115,170 100,165 90,185" fill="none" stroke="#C0392B" stroke-width="5" stroke-linecap="round"/>
+    <ellipse cx="82" cy="190" rx="14" ry="10" fill="#E84C3D" stroke="#C0392B" stroke-width="1.5" transform="rotate(-20,82,190)"/>
+    <path d="M72,185 C65,178 68,170 76,172" fill="none" stroke="#C0392B" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- right arm + claw -->
+    <path d="M258,190 C285,170 300,165 310,185" fill="none" stroke="#C0392B" stroke-width="5" stroke-linecap="round"/>
+    <ellipse cx="318" cy="190" rx="14" ry="10" fill="#E84C3D" stroke="#C0392B" stroke-width="1.5" transform="rotate(20,318,190)"/>
+    <path d="M328,185 C335,178 332,170 324,172" fill="none" stroke="#C0392B" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- eye stalks -->
+    <rect x="168" y="152" width="6" height="22" rx="3" fill="#C0392B"/>
+    <rect x="226" y="152" width="6" height="22" rx="3" fill="#C0392B"/>
+
+    <!-- eyes -->
+    <circle cx="171" cy="148" r="11" fill="#fff" stroke="#C0392B" stroke-width="1.5"/>
+    <circle cx="173" cy="146" r="5.5" fill="#111"/>
+    <circle cx="175" cy="144" r="2" fill="#fff" opacity="0.8"/>
+
+    <circle cx="229" cy="148" r="11" fill="#fff" stroke="#C0392B" stroke-width="1.5"/>
+    <circle cx="231" cy="146" r="5.5" fill="#111"/>
+    <circle cx="233" cy="144" r="2" fill="#fff" opacity="0.8"/>
+
+    <!-- smile -->
+    <path d="M175,260 Q200,275 225,260" fill="none" stroke="#8a1e14" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- ====== PIRATE HAT ====== -->
+  <g filter="url(#shadow)">
+    <path d="M110,145 C120,100 150,70 200,55 C250,70 280,100 290,145 C250,138 225,135 200,134 C175,135 150,138 110,145 Z" fill="url(#hatGrad)"/>
+    <path d="M125,140 C135,110 160,85 200,72 C240,85 265,110 275,140 C250,135 225,132 200,131 C175,132 150,135 125,140 Z" fill="#222"/>
+    <path d="M115,143 C150,136 175,133 200,132 C225,133 250,136 285,143" fill="none" stroke="url(#gold)" stroke-width="2" opacity="0.8"/>
+    <path d="M128,138 C155,132 178,129 200,128 C222,129 245,132 272,138" fill="none" stroke="url(#gold)" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- skull -->
+    <g transform="translate(200, 95)">
+      <ellipse cx="0" cy="0" rx="13" ry="11" fill="#eee" stroke="#ccc" stroke-width="0.5"/>
+      <circle cx="-5" cy="-3" r="4" fill="#111"/>
+      <circle cx="5" cy="-3" r="4" fill="#111"/>
+      <polygon points="0,1 -2,4 2,4" fill="#111"/>
+      <rect x="-6" y="5" width="3.5" height="3.5" rx="0.5" fill="#fff" stroke="#ddd" stroke-width="0.3"/>
+      <rect x="2.5" y="5" width="3.5" height="3.5" rx="0.5" fill="#fff" stroke="#ddd" stroke-width="0.3"/>
+      <line x1="-13" y1="-12" x2="13" y2="12" stroke="#ccc" stroke-width="3" stroke-linecap="round"/>
+      <line x1="-13" y1="12" x2="13" y2="-12" stroke="#ccc" stroke-width="3" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- ====== KUBERNETES WHEEL (small, centered on chest) ====== -->
+  <g transform="translate(200, 210)">
+    <circle cx="0" cy="0" r="32" fill="none" stroke="url(#wheelGrad)" stroke-width="4"/>
+    <circle cx="0" cy="0" r="8" fill="#1a4fa0" stroke="#326CE5" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="3" fill="#326CE5"/>
+    <g fill="#326CE5">
+      <polygon points="0,-30 -3.5,-13 3.5,-13" transform="rotate(0)"/>
+      <polygon points="0,-30 -3.5,-13 3.5,-13" transform="rotate(51.4)"/>
+      <polygon points="0,-30 -3.5,-13 3.5,-13" transform="rotate(102.9)"/>
+      <polygon points="0,-30 -3.5,-13 3.5,-13" transform="rotate(154.3)"/>
+      <polygon points="0,-30 -3.5,-13 3.5,-13" transform="rotate(205.7)"/>
+      <polygon points="0,-30 -3.5,-13 3.5,-13" transform="rotate(257.1)"/>
+      <polygon points="0,-30 -3.5,-13 3.5,-13" transform="rotate(308.6)"/>
+    </g>
+  </g>
+
+  <!-- ====== TEXT ====== -->
+  <g font-family="system-ui, sans-serif">
+    <text x="200" y="385" text-anchor="middle" font-size="46" font-weight="700" letter-spacing="10" fill="url(#gold)">SORTIE</text>
+    <text x="200" y="400" text-anchor="middle" font-size="10" letter-spacing="4" fill="rgba(255,255,255,0.25)">RUST × KUBERNETES × PIRATE</text>
+  </g>
+</svg>

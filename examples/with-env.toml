@@ -1,0 +1,17 @@
+[targets.api]
+hosts = ["api1.example.com", "api2.example.com"]
+user = "rust-deploy"
+key_path = "~/.ssh/deploy-key"
+target_triple = "aarch64-unknown-linux-gnu"
+deploy_path = "/srv/api"
+health_check_url = "http://localhost:3000/health"
+
+[targets.api.service]
+name = "api-server"
+restart = "on-failure"
+extra_args = ["--port", "3000"]
+
+[targets.api.env]
+DATABASE_URL = "postgres://localhost:5432/myapp"
+RUST_LOG = "api=debug,info"
+REDIS_URL = "redis://localhost:6379"

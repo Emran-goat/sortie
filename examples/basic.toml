@@ -1,0 +1,9 @@
+[targets.production]
+hosts = ["1.2.3.4"]
+user = "deploy"
+target_triple = "x86_64-unknown-linux-gnu"
+deploy_path = "/opt/myapp"
+health_check_url = "http://localhost:8080/health"
+
+[targets.production.service]
+name = "myapp"

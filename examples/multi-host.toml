@@ -1,0 +1,14 @@
+[targets.web]
+hosts = ["10.0.0.1", "10.0.0.2", "10.0.0.3"]
+user = "deploy"
+target_triple = "x86_64-unknown-linux-gnu"
+deploy_path = "/opt/webapp"
+health_check_url = "http://localhost:8080/health"
+health_check_timeout_secs = 60
+
+[targets.web.service]
+name = "webapp"
+restart = "always"
+
+[targets.web.env]
+RUST_LOG = "info"

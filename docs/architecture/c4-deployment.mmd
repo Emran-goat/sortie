@@ -1,0 +1,21 @@
+C4Deployment
+title Sortie Deployment
+
+Deployment_Node(dev, "Developer Machine", "Linux/macOS/Windows") {
+  Deployment_Node(cli_node, "sortie CLI", "Rust binary") {
+    Container(cli_bin, "sortie.exe", "Installed via cargo install")
+    Container(config, "sortie.toml", "TOML config")
+  }
+}
+
+Deployment_Node(server, "Production Server", "Linux") {
+  Deployment_Node(systemd_node, "systemd", "Init system") {
+    Container(svc, "sortie.service", "Systemd unit file")
+  }
+  Deployment_Node(app, "Application", "/opt/sortie/") {
+    Container(bin, "sortie", "Deployed binary")
+  }
+}
+
+Rel(cli_bin, svc, "SCP upload service file")
+Rel(cli_bin, bin, "SCP upload binary")

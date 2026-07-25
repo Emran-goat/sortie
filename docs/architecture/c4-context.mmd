@@ -1,0 +1,12 @@
+C4Context
+title System Context - Sortie
+
+Person(dev, "Developer", "Writes Rust code and deploys")
+System_Boundary(sortie_sys, "Sortie") {
+  System(sortie, "Sortie CLI", "Builds, deploys and manages Rust binaries on remote servers")
+}
+System_Ext(server, "Production Server", "Linux server running systemd")
+
+Rel(dev, sortie, "Runs deploy/status/rollback")
+Rel(sortie, server, "SCP upload + SSH commands + health checks")
+Rel(server, sortie, "Returns exit codes, service status, health")

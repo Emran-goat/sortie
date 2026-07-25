@@ -1,0 +1,37 @@
+[package]
+name = "sortie"
+version = "0.2.0"
+edition = "2021"
+description = "One-command Rust binary deployment to production"
+license = "MIT"
+repository = "https://github.com/Emran-goat/sortie"
+keywords = ["deploy", "ssh", "devops", "cli"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+ssh2 = "0.9"
+url = "2"
+hyper = { version = "1", features = ["server", "client", "http1"] }
+hyper-util = { version = "0.1", features = ["tokio", "client", "client-legacy", "server", "http1"] }
+http-body-util = "0.1"
+tokio = { version = "1", features = ["rt", "rt-multi-thread", "macros", "net", "time", "signal", "fs"] }
+
+[lib]
+path = "pkg/lib.rs"
+
+[[bin]]
+name = "sortie"
+path = "cmd/sortie/main.rs"
+
+[[bin]]
+name = "sortie-agent"
+path = "cmd/agent/main.rs"
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1

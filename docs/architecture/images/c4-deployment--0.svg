@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" style="max-width:900px;font-family:system-ui,-apple-system,sans-serif;">
+<rect width="900" height="450" fill="#fff"/>
+<text x="450" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">Sortie Deployment</text>
+
+<rect x="30" y="60" width="350" height="340" rx="8" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="6,3"/>
+<text x="40" y="78" font-size="11" fill="#666" font-weight="bold">Developer Machine</text>
+<rect x="50" y="80" width="310" height="140" rx="8" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="6,3"/>
+<text x="60" y="98" font-size="11" fill="#666" font-weight="bold">sortie CLI</text>
+<rect x="70" y="100" width="130" height="40" rx="6" fill="#DAE8FC" stroke="#4A7DB4" stroke-width="1.5"/>
+<text x="135" y="114" text-anchor="middle" font-size="13" font-weight="bold" fill="#000">sortie</text>
+<text x="135" y="130" text-anchor="middle" font-size="11" fill="#444">cargo install</text>
+<rect x="230" y="100" width="110" height="40" rx="6" fill="#FFE6CC" stroke="#B85C1A" stroke-width="1.5"/>
+<text x="285" y="114" text-anchor="middle" font-size="13" font-weight="bold" fill="#000">sortie.toml</text>
+<text x="285" y="130" text-anchor="middle" font-size="11" fill="#444">TOML config</text>
+<rect x="50" y="240" width="310" height="140" rx="8" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="6,3"/>
+<text x="60" y="258" font-size="11" fill="#666" font-weight="bold">Production Server (Linux)</text>
+<rect x="65" y="255" width="125" height="110" rx="8" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="6,3"/>
+<text x="75" y="273" font-size="11" fill="#666" font-weight="bold">systemd</text>
+<rect x="75" y="270" width="105" height="40" rx="6" fill="#E1D5E7" stroke="#7A5F8E" stroke-width="1.5"/>
+<text x="127.5" y="284" text-anchor="middle" font-size="13" font-weight="bold" fill="#000">sortie.service</text>
+<text x="127.5" y="300" text-anchor="middle" font-size="11" fill="#444">Unit file</text>
+<rect x="210" y="255" width="130" height="110" rx="8" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="6,3"/>
+<text x="220" y="273" font-size="11" fill="#666" font-weight="bold">/opt/sortie/</text>
+<rect x="220" y="270" width="110" height="40" rx="6" fill="#D5E8D4" stroke="#5F8E5F" stroke-width="1.5"/>
+<text x="275" y="284" text-anchor="middle" font-size="13" font-weight="bold" fill="#000">sortie</text>
+<text x="275" y="300" text-anchor="middle" font-size="11" fill="#444">Deployed binary</text>
+<line x1="135" y1="140" x2="135" y2="240" stroke="#666" stroke-width="1.5" marker-end="none"/>
+<polygon points="135,240 130,230 140,230" fill="#666" stroke="#666" stroke-width="1"/>
+<text x="135" y="184" text-anchor="middle" font-size="10" fill="#555" transform="">SCP upload service file</text>
+<line x1="275" y1="140" x2="275" y2="240" stroke="#666" stroke-width="1.5" marker-end="none"/>
+<polygon points="275,240 270,230 280,230" fill="#666" stroke="#666" stroke-width="1"/>
+<text x="275" y="184" text-anchor="middle" font-size="10" fill="#555" transform="">SCP upload binary</text>
+
+</svg>

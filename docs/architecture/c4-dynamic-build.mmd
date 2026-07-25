@@ -1,0 +1,20 @@
+C4Dynamic
+title Deploy Flow - Sortie
+
+Boundary(dev_env, "Developer Machine") {
+  Person(dev, "Developer")
+  System(cli, "sortie deploy", "Rust binary")
+}
+
+Boundary(server_env, "Production Server") {
+  System_Ext(bin, "sortie binary", "Deployed Rust application")
+  System_Ext(systemd, "systemd service", "Process manager")
+  System_Ext(health, "Health endpoint", "HTTP /health")
+}
+
+Rel(dev, cli, "Runs")
+Rel(cli, bin, "1. Builds + SCP uploads", "SCP")
+Rel(bin, systemd, "2. Installs service file", "SCP")
+Rel(systemd, bin, "3. Enables + starts", "systemctl")
+Rel(bin, health, "4. Pings endpoint", "HTTP GET")
+UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="2")

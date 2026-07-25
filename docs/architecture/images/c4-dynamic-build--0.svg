@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" style="max-width:900px;font-family:system-ui,-apple-system,sans-serif;">
+<rect width="900" height="500" fill="#fff"/>
+<text x="450" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">Deploy Flow - Sortie</text>
+
+<rect x="30" y="60" width="350" height="390" rx="8" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="6,3"/>
+<text x="40" y="78" font-size="11" fill="#666" font-weight="bold">Developer Machine</text>
+<g>
+<circle cx="95" cy="124" r="10" fill="#ECECFF" stroke="#6868AC" stroke-width="1.5"/>
+<ellipse cx="95" cy="150" rx="18" ry="14" fill="#ECECFF" stroke="#6868AC" stroke-width="1.5"/>
+<rect x="72" y="156" width="46" height="20" rx="4" fill="#ECECFF" stroke="#6868AC" stroke-width="1.5"/>
+<text x="95" y="169" text-anchor="middle" font-size="10" fill="#000">Developer</text>
+</g>
+<rect x="50" y="200" width="200" height="60" rx="6" fill="#DAE8FC" stroke="#4A7DB4" stroke-width="1.5"/>
+<text x="150" y="224" text-anchor="middle" font-size="13" font-weight="bold" fill="#000">sortie deploy</text>
+<text x="150" y="240" text-anchor="middle" font-size="11" fill="#444">CLI command</text>
+<rect x="430" y="60" width="420" height="390" rx="8" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="6,3"/>
+<text x="440" y="78" font-size="11" fill="#666" font-weight="bold">Production Server</text>
+<rect x="450" y="110" width="200" height="60" rx="6" fill="#D5E8D4" stroke="#5F8E5F" stroke-width="1.5"/>
+<text x="550" y="134" text-anchor="middle" font-size="13" font-weight="bold" fill="#000">sortie binary</text>
+<text x="550" y="150" text-anchor="middle" font-size="11" fill="#444">Deployed application</text>
+<rect x="450" y="210" width="200" height="60" rx="6" fill="#E1D5E7" stroke="#7A5F8E" stroke-width="1.5"/>
+<text x="550" y="234" text-anchor="middle" font-size="13" font-weight="bold" fill="#000">systemd service</text>
+<text x="550" y="250" text-anchor="middle" font-size="11" fill="#444">Process manager</text>
+<rect x="450" y="310" width="200" height="60" rx="6" fill="#FFE6CC" stroke="#B85C1A" stroke-width="1.5"/>
+<text x="550" y="334" text-anchor="middle" font-size="13" font-weight="bold" fill="#000">Health endpoint</text>
+<text x="550" y="350" text-anchor="middle" font-size="11" fill="#444">HTTP /health</text>
+<line x1="180" y1="200" x2="450" y2="140" stroke="#666" stroke-width="1.5" marker-end="none"/>
+<polygon points="450,140 441.3227816872538,147.05023987910633 439.1534771090672,137.2883692772668" fill="#666" stroke="#666" stroke-width="1"/>
+<text x="315" y="164" text-anchor="middle" font-size="10" fill="#555" transform="">1. Build + SCP upload</text>
+<line x1="550" y1="170" x2="550" y2="210" stroke="#666" stroke-width="1.5" marker-end="none"/>
+<polygon points="550,210 545,200 555,200" fill="#666" stroke="#666" stroke-width="1"/>
+<text x="550" y="184" text-anchor="middle" font-size="10" fill="#555" transform="">2. Install service file</text>
+<line x1="550" y1="270" x2="550" y2="310" stroke="#666" stroke-width="1.5" marker-end="none"/>
+<polygon points="550,310 545,300 555,300" fill="#666" stroke="#666" stroke-width="1"/>
+<text x="550" y="284" text-anchor="middle" font-size="10" fill="#555" transform="">3. Enable + start</text>
+<line x1="500" y1="340" x2="350" y2="240" stroke="#666" stroke-width="1.5" marker-end="none"/>
+<polygon points="350,240 361.09400392450453,241.3867504905631 355.5470019622523,249.7072534339415" fill="#666" stroke="#666" stroke-width="1"/>
+<text x="425" y="284" text-anchor="middle" font-size="10" fill="#555" transform="rotate(180 425 290)">4. HTTP GET /health</text>
+
+</svg>

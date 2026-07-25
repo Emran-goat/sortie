@@ -1,0 +1,15 @@
+C4Container
+title Sortie Container Diagram
+
+Person(dev, "Developer", "Uses CLI commands")
+
+System_Boundary(cli_sys, "sortie") {
+  Container(cli, "CLI", "clap", "Parses commands and routes to engine")
+  Container(engine, "Engine", "Rust lib", "Core deploy logic")
+}
+
+System_Ext(server, "Linux Server", "systemd + SSH")
+
+Rel(dev, cli, "sortie deploy production")
+Rel(cli, engine, "Calls deploy/rollback/status")
+Rel(engine, server, "SCP + SSH", "libssh2")
