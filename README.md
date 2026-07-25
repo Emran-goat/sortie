@@ -13,11 +13,7 @@
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
   <a href="https://www.rust-lang.org"><img src="https://img.shields.io/badge/rust-1.70%2B-orange.svg?style=flat-square" alt="Rust"></a>
-  <a href="https://github.com/Emran-goat/sortie/actions"><img src="https://img.shields.io/badge/build-passing-brightgreen.svg?style=flat-square" alt="CI"></a>
-  <a href="https://crates.io/crates/sortie"><img src="https://img.shields.io/crates/v/sortie.svg?style=flat-square&color=blueviolet" alt="crates.io"></a>
-  <a href="https://crates.io/crates/sortie"><img src="https://img.shields.io/crates/d/sortie.svg?style=flat-square&color=blue" alt="Downloads"></a>
-  <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"></a>
-  <a href="CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square" alt="Code of Conduct"></a>
+
 </p>
 
 ## Features
@@ -111,7 +107,7 @@ cargo install sortie
 Or build from source:
 
 ```
-git clone https://github.com/Emran-goat/sortie.git
+git clone <repo-url>
 cd sortie
 cargo build --release
 ```
@@ -216,7 +212,6 @@ sortie/
   SUPPORT.md
   OWNERS
   OWNERS_ALIASES
-  AGENTS.md
   .gitattributes
   .gitignore
   rust-toolchain.toml

@@ -33,7 +33,7 @@ pub fn rolling_deploy(target: &str, config: &TargetConfig) -> Result<(), String>
             }
             Err(e) => {
                 eprintln!("[{}/{}] {} FAILED: {}", i + 1, hosts.len(), host, e);
-                // ponytail: skip dead host, deploys to remaining
+                // skip dead host, deploys to remaining
             }
         }
     }
@@ -57,7 +57,7 @@ pub fn canary_deploy(target: &str, config: &TargetConfig, percent: u32) -> Resul
     }
     let count = ((hosts.len() as u32 * percent).max(1) as usize).min(hosts.len());
     let subset: Vec<String> = hosts.iter().take(count).cloned().collect();
-    // ponytail: deploy to subset, report remaining
+    // deploy to subset, report remaining
     println!("Canary {}%: deploying to {} of {} host(s)", percent, count, hosts.len());
     let canary_config = TargetConfig { hosts: Some(subset), ..config.clone() };
     rolling_deploy(target, &canary_config)?;
@@ -82,7 +82,7 @@ pub fn blue_green_deploy(target: &str, config: &TargetConfig) -> Result<(), Stri
     if hosts.is_empty() {
         return Err(format!("Target '{}' has no hosts defined.", target));
     }
-    // ponytail: deploy to .blue, symlink flip. green = current, blue = new.
+    // deploy to .blue, symlink flip. green = current, blue = new.
     let bg_config = TargetConfig {
         deploy_path: format!("{}.blue", config.deploy_path),
         ..config.clone()
@@ -169,9 +169,9 @@ pub fn fetch_logs(host: &str, config: &TargetConfig, lines: u32) -> Result<Strin
     }
 }
 
-// ponytail: service registry reads/writes state.json on the first host
-// ponytail: ingress generates nginx config from registered services
-// ponytail: scale writes a new sortie.toml with updated instance count
+// service registry reads/writes state.json on the first host
+// ingress generates nginx config from registered services
+// scale writes a new sortie.toml with updated instance count
 
 pub fn register_service(target: &str, config: &TargetConfig, name: &str, port: u16) -> Result<(), String> {
     use crate::types::ServiceEndpoint;
@@ -186,7 +186,7 @@ pub fn register_service(target: &str, config: &TargetConfig, name: &str, port: u
         port,
         health: "unknown".to_string(),
     });
-    // ponytail: updates state on the first host. other hosts are passive.
+    // updates state on the first host. other hosts are passive.
     for h in &hosts {
         crate::deploy::write_state_raw(h, config, &state)?;
     }
@@ -257,7 +257,7 @@ pub fn scale_target(target: &str, config: &TargetConfig, instances: u32) -> Resu
     if hosts.is_empty() {
         return Err(format!("Target '{}' has no hosts.", target));
     }
-    // ponytail: launches N instanced systemd units (@instanced.service)
+    // launches N instanced systemd units (@instanced.service)
     for host in &hosts {
         let session = crate::ssh::connect(host, config.port.unwrap_or(22), &config.user, config.key_path.as_deref())?;
         let svc = match &config.service {
@@ -274,7 +274,7 @@ pub fn scale_target(target: &str, config: &TargetConfig, instances: u32) -> Resu
                 crate::ssh::run_command(&session, &format!("systemctl start {}", sh_quote(&unit))).ok();
             }
         }
-        // ponytail: stop excess instances beyond desired count
+        // stop excess instances beyond desired count
         for i in instances + 1..=instances + 10 {
             let unit = format!("{}@{}.service", svc.name, i);
             let _ = crate::ssh::run_command(&session, &format!("systemctl stop {} 2>/dev/null; systemctl disable {} 2>/dev/null", sh_quote(&unit), sh_quote(&unit)));
@@ -349,7 +349,7 @@ pub fn setup_tls(target: &str, config: &TargetConfig, domain: &str, email: &str)
     }
     for host in &hosts {
         let session = crate::ssh::connect(host, config.port.unwrap_or(22), &config.user, config.key_path.as_deref())?;
-        // ponytail: certbot --nginx, non-interactive. assumes certbot installed.
+        // certbot --nginx, non-interactive. assumes certbot installed.
         let cmd = format!(
             "certbot --nginx -d {} --non-interactive --agree-tos -m {} || echo 'certbot failed (install certbot?)'",
             sh_quote(domain), sh_quote(email)
@@ -377,7 +377,7 @@ pub fn autoscale_loop(target: &str, config: &TargetConfig, min: u32, max: u32) -
                 Ok(s) => s,
                 Err(_) => continue,
             };
-            // ponytail: check CPU load, scale up if >80%, down if <20%
+            // check CPU load, scale up if >80%, down if <20%
             let cmd = "top -bn1 | grep 'Cpu(s)' | awk '{print $2}' | cut -d'%' -f1";
             let (out, _, code) = match crate::ssh::run_command(&session, cmd) {
                 Ok(v) => v,
@@ -513,7 +513,7 @@ pub fn install_proxy(target: &str, config: &TargetConfig, port: u16) -> Result<(
     if hosts.is_empty() {
         return Err(format!("Target '{}' has no hosts.", target));
     }
-    // ponytail: find the agent binary next to the CLI binary, or in target/
+    // find the agent binary next to the CLI binary, or in target/
     fn find_agent_binary() -> Option<std::path::PathBuf> {
         let exe = std::env::current_exe().ok()?;
         let dir = exe.parent()?;

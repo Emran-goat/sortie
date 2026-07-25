@@ -19,7 +19,7 @@ pub fn init_project() -> Result<(), String> {
     println!("Open it up and set your server details, then run:");
     println!("  sortie apply production");
     println!();
-    println!("Need help? Check the docs at https://github.com/Emran-goat/sortie");
+    println!("Need help? Check the README for documentation.");
 
     Ok(())
 }

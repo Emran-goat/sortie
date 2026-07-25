@@ -6,7 +6,7 @@ See [README.md](README.md) for getting started and the full command reference.
 
 ## Issues
 
-Report bugs and request features at https://github.com/Emran-goat/sortie/issues.
+Report bugs and request features on the GitHub issues page.
 
 ## Security
 
@@ -14,5 +14,4 @@ See [SECURITY.md](SECURITY.md) for reporting security vulnerabilities.
 
 ## Community
 
-- GitHub Issues: https://github.com/Emran-goat/sortie/issues
-- Discussions: https://github.com/Emran-goat/sortie/discussions
+

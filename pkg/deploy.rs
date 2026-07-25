@@ -66,7 +66,7 @@ fn write_state(session: &ssh2::Session, config: &TargetConfig, binary: &Path) ->
     s.version = get_current_commit();
     s.binary_hash = hash_binary(binary)?;
     s.timestamp = format!("{:?}", std::time::SystemTime::now());
-    // ponytail: keeps services registry from existing state
+    // keeps services registry from existing state
     crate::ssh::run_command(session, &format!(
         "cat > {} << 'SORTIEEOF'\n{}\nSORTIEEOF",
         sh_quote(&path),

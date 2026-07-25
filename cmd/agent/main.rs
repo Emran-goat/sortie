@@ -6,7 +6,6 @@ use std::time::Duration;
 fn main() {
     let args: Vec<String> = env::args().collect();
 
-    // ponytail: simple arg parsing, no clap dep on the agent
     let mut deploy_path = String::new();
     let mut interval: u64 = 30;
     let mut proxy_mode = false;

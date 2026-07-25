@@ -4,7 +4,7 @@ version = "0.2.0"
 edition = "2021"
 description = "One-command Rust binary deployment to production"
 license = "MIT"
-repository = "https://github.com/Emran-goat/sortie"
+repository = ""
 keywords = ["deploy", "ssh", "devops", "cli"]
 categories = ["command-line-utilities"]
 
