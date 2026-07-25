@@ -13,7 +13,9 @@
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
   <a href="https://www.rust-lang.org"><img src="https://img.shields.io/badge/rust-1.70%2B-orange.svg?style=flat-square" alt="Rust"></a>
-
+  <a href="https://github.com/Emran-goat/sortie/actions"><img src="https://img.shields.io/github/actions/workflow/status/Emran-goat/sortie/ci.yml?style=flat-square" alt="CI"></a>
+  <a href="https://github.com/Emran-goat/sortie/releases"><img src="https://img.shields.io/github/v/release/Emran-goat/sortie?style=flat-square" alt="Release"></a>
+  <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"></a>
 </p>
 
 ## Features
