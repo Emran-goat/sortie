@@ -25,6 +25,14 @@ pub fn deploy_single_host(
     crate::ssh::upload_file(&session, binary, Path::new(&remote_new))?;
     crate::ssh::run_command(&session, &format!("chmod +x {}", q_new))?;
 
+    if let Some(ref cmd) = config.pre_deploy {
+        println!("  Running pre_deploy...");
+        let (_, stderr, code) = crate::ssh::run_command(&session, cmd)?;
+        if code != 0 {
+            return Err(format!("pre_deploy failed on {}: {}", host, stderr.trim()));
+        }
+    }
+
     crate::ssh::run_command(&session, &format!("if [ -f {} ]; then cp {} {}; fi", q_cur, q_cur, q_bak))?;
     crate::ssh::run_command(&session, &format!("mv {} {}", q_new, q_cur))?;
 
@@ -48,6 +56,14 @@ pub fn deploy_single_host(
             return Err(format!("Health check failed on {}", host));
         }
         println!(" OK");
+    }
+
+    if let Some(ref cmd) = config.post_deploy {
+        println!("  Running post_deploy...");
+        let (_, stderr, code) = crate::ssh::run_command(&session, cmd)?;
+        if code != 0 {
+            return Err(format!("post_deploy failed on {}: {}", host, stderr.trim()));
+        }
     }
 
     write_state(&session, config, binary)?;

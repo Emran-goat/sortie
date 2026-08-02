@@ -59,6 +59,8 @@ mod tests {
             env: None,
             instances: None,
             cross_compile: false,
+            pre_deploy: None,
+            post_deploy: None,
         };
         let result = rollback("staging", &cfg);
         assert!(result.is_err());
@@ -82,6 +84,8 @@ mod tests {
             env: None,
             instances: None,
             cross_compile: false,
+            pre_deploy: None,
+            post_deploy: None,
         };
         let result = rollback("staging", &cfg);
         assert!(result.is_err());

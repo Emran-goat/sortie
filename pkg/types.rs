@@ -23,6 +23,8 @@ pub struct TargetConfig {
     pub instances: Option<u32>,
     #[serde(default)]
     pub cross_compile: bool,
+    pub pre_deploy: Option<String>,
+    pub post_deploy: Option<String>,
 }
 
 impl TargetConfig {
@@ -90,6 +92,8 @@ impl Default for Config {
                 env: None,
                 instances: None,
                 cross_compile: false,
+                pre_deploy: None,
+                post_deploy: None,
             },
         );
         Config { targets }
@@ -117,6 +121,8 @@ mod tests {
             env: None,
             instances: None,
             cross_compile: false,
+            pre_deploy: None,
+            post_deploy: None,
         };
         assert_eq!(cfg.get_hosts(), vec!["10.0.0.1", "10.0.0.2"]);
     }
@@ -138,6 +144,8 @@ mod tests {
             env: None,
             instances: None,
             cross_compile: false,
+            pre_deploy: None,
+            post_deploy: None,
         };
         assert_eq!(cfg.get_hosts(), vec!["1.2.3.4"]);
     }
@@ -159,6 +167,8 @@ mod tests {
             env: None,
             instances: None,
             cross_compile: false,
+            pre_deploy: None,
+            post_deploy: None,
         };
         assert!(cfg.get_hosts().is_empty());
     }
@@ -181,6 +191,8 @@ mod tests {
             env: None,
             instances: None,
             cross_compile: false,
+            pre_deploy: None,
+            post_deploy: None,
         };
         assert_eq!(cfg.get_hosts(), vec!["fallback"]);
     }

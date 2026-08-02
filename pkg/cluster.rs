@@ -585,6 +585,8 @@ mod tests {
             env: None,
             instances: None,
             cross_compile: false,
+            pre_deploy: None,
+            post_deploy: None,
         };
         let result = rolling_deploy("staging", &cfg);
         assert!(result.is_err());
@@ -611,6 +613,8 @@ mod tests {
                 env: None,
                 instances: None,
                 cross_compile: false,
+                pre_deploy: None,
+                post_deploy: None,
             },
         );
         let config = crate::types::Config { targets };
@@ -637,6 +641,8 @@ mod tests {
             env: None,
             instances: None,
             cross_compile: false,
+            pre_deploy: None,
+            post_deploy: None,
         };
         let result = get_host_status("10.0.0.1", &cfg);
         assert!(result.is_err());

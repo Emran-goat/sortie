@@ -157,6 +157,8 @@ target_triple = "x86_64-unknown-linux-gnu"
 deploy_path = "/opt/myapp"
 health_check_url = "http://localhost:8080/health"
 health_check_timeout_secs = 30
+pre_deploy = "cd /opt/myapp && ./run_migrations.sh"
+post_deploy = "echo 'Deployment completed'"
 
 [targets.production.service]
 name = "myapp"
@@ -180,6 +182,8 @@ RUST_LOG = "info"
 | `health_check_url` | no | | URL to check after deploy |
 | `health_check_timeout_secs` | no | 30 | Max wait for health |
 | `instances` | no | 1 | Expected replicas per host |
+| `pre_deploy` | no | | Command to run on each host before the new binary takes traffic |
+| `post_deploy` | no | | Command to run on each host after the deploy succeeds |
 | `service.name` | yes | | systemd service name |
 | `service.restart` | no | `always` | Restart policy |
 | `env.*` | no | | Environment variables |
